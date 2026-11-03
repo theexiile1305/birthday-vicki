@@ -1,0 +1,747 @@
+
+/* =================================
+   Vicki'S BIRTHDAY SURPRISE
+   Designed with love by Michael ❤️
+================================= */
+
+/* GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        135deg,
+        #ffe0ed,
+        #eadfff,
+        #dff5ff
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MAIN BIRTHDAY CARD */
+
+.birthday-container {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255,255,255,0.88);
+    padding: 35px 25px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(180,110,160,0.2);
+    position: relative;
+    z-index: 2;
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TOP DECORATION */
+
+.top-decoration {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.small-heading {
+    color: #c66c9d;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+/* HEADINGS */
+
+h1 {
+    color: #d65b98;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(42px, 10vw, 65px);
+    margin-top: 15px;
+}
+
+.name {
+    color: #a45bb7;
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.intro {
+    color: #795a7c;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 15px 0 20px;
+}
+
+/* BIRTHDAY CAKE */
+
+.cake-container {
+    margin: 20px 0;
+}
+
+.cake {
+    font-size: 110px;
+    animation: cakeBounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 10px 8px #e7b1ce);
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+.cake-caption {
+    color: #d76b9f;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+/* BIRTHDAY MESSAGE */
+
+.message-box {
+    background: #fff0f7;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 1px solid #f5d2e4;
+}
+
+.message-box p {
+    color: #795a7c;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.message-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* SURPRISE BUTTON */
+
+.surprise-button {
+    border: none;
+    outline: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #ed82b7,
+        #a879d7
+    );
+
+    box-shadow: 0 8px 20px #d9a2cf66;
+    transition: 0.3s ease;
+}
+
+.surprise-button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px #d68fcf99;
+}
+
+.surprise-button:active {
+    transform: scale(0.96);
+}
+
+/* HIDDEN SURPRISE */
+
+.surprise-message {
+    display: none;
+    margin-top: 25px;
+    padding: 25px 15px;
+    background: linear-gradient(
+        135deg,
+        #fff0f7,
+        #f0e6ff
+    );
+    border-radius: 20px;
+    animation: reveal 1s ease;
+}
+
+.surprise-message.show {
+    display: block;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gift-icon {
+    font-size: 65px;
+    animation: giftBounce 1.5s infinite;
+}
+
+@keyframes giftBounce {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.surprise-message h2 {
+    color: #d65b98;
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.surprise-message p {
+    color: #795a7c;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 12px 0;
+}
+
+.flowers {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.surprise-message h3 {
+    color: #a45bb7;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.surprise-message .signature {
+    color: #d65b98;
+    font-size: 45px;
+}
+
+/* FLOATING BALLOONS */
+
+#balloons {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    font-size: 40px;
+    animation: floatBalloon linear infinite;
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* BACKGROUND SPARKLES */
+
+.sparkle {
+    position: fixed;
+    font-size: 28px;
+    opacity: 0.7;
+    animation: sparkle 3s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sparkle-one {
+    top: 10%;
+    left: 8%;
+}
+
+.sparkle-two {
+    top: 20%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+.sparkle-three {
+    bottom: 12%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes sparkle {
+    50% {
+        transform: scale(1.4) rotate(20deg);
+        opacity: 1;
+    }
+}
+
+/* CONFETTI */
+
+.confetti {
+    position: fixed;
+    top: -30px;
+    font-size: 22px;
+    pointer-events: none;
+    z-index: 10;
+    animation: confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+
+.bottom-decoration {
+    margin-top: 25px;
+    color: #b17ca5;
+    font-size: 11px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .birthday-container {
+        padding: 28px 18px;
+    }
+
+    .cake {
+        font-size: 90px;
+    }
+
+    .name {
+        font-size: 48px;
+    }
+
+    .surprise-button {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =================================
+   Vicki'S BIRTHDAY SURPRISE
+   Designed with love by Michael ❤️
+================================= */
+
+/* GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        135deg,
+        #ffe0ed,
+        #eadfff,
+        #dff5ff
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MAIN BIRTHDAY CARD */
+
+.birthday-container {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255,255,255,0.88);
+    padding: 35px 25px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(180,110,160,0.2);
+    position: relative;
+    z-index: 2;
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TOP DECORATION */
+
+.top-decoration {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.small-heading {
+    color: #c66c9d;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+/* HEADINGS */
+
+h1 {
+    color: #d65b98;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(42px, 10vw, 65px);
+    margin-top: 15px;
+}
+
+.name {
+    color: #a45bb7;
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.intro {
+    color: #795a7c;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 15px 0 20px;
+}
+
+/* BIRTHDAY CAKE */
+
+.cake-container {
+    margin: 20px 0;
+}
+
+.cake {
+    font-size: 110px;
+    animation: cakeBounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 10px 8px #e7b1ce);
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+.cake-caption {
+    color: #d76b9f;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+/* BIRTHDAY MESSAGE */
+
+.message-box {
+    background: #fff0f7;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 1px solid #f5d2e4;
+}
+
+.message-box p {
+    color: #795a7c;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.message-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* SURPRISE BUTTON */
+
+.surprise-button {
+    border: none;
+    outline: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #ed82b7,
+        #a879d7
+    );
+
+    box-shadow: 0 8px 20px #d9a2cf66;
+    transition: 0.3s ease;
+}
+
+.surprise-button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px #d68fcf99;
+}
+
+.surprise-button:active {
+    transform: scale(0.96);
+}
+
+/* HIDDEN SURPRISE */
+
+.surprise-message {
+    display: none;
+    margin-top: 25px;
+    padding: 25px 15px;
+    background: linear-gradient(
+        135deg,
+        #fff0f7,
+        #f0e6ff
+    );
+    border-radius: 20px;
+    animation: reveal 1s ease;
+}
+
+.surprise-message.show {
+    display: block;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gift-icon {
+    font-size: 65px;
+    animation: giftBounce 1.5s infinite;
+}
+
+@keyframes giftBounce {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.surprise-message h2 {
+    color: #d65b98;
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.surprise-message p {
+    color: #795a7c;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 12px 0;
+}
+
+.flowers {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.surprise-message h3 {
+    color: #a45bb7;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.surprise-message .signature {
+    color: #d65b98;
+    font-size: 45px;
+}
+
+/* FLOATING BALLOONS */
+
+#balloons {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    font-size: 40px;
+    animation: floatBalloon linear infinite;
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* BACKGROUND SPARKLES */
+
+.sparkle {
+    position: fixed;
+    font-size: 28px;
+    opacity: 0.7;
+    animation: sparkle 3s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sparkle-one {
+    top: 10%;
+    left: 8%;
+}
+
+.sparkle-two {
+    top: 20%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+.sparkle-three {
+    bottom: 12%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes sparkle {
+    50% {
+        transform: scale(1.4) rotate(20deg);
+        opacity: 1;
+    }
+}
+
+/* CONFETTI */
+
+.confetti {
+    position: fixed;
+    top: -30px;
+    font-size: 22px;
+    pointer-events: none;
+    z-index: 10;
+    animation: confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+
+.bottom-decoration {
+    margin-top: 25px;
+    color: #b17ca5;
+    font-size: 11px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .birthday-container {
+        padding: 28px 18px;
+    }
+
+    .cake {
+        font-size: 90px;
+    }
+
+    .name {
+        font-size: 48px;
+    }
+
+    .surprise-button {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
